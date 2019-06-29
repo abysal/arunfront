@@ -1,0 +1,62 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
+<script src="./dashboard_files/jquery.min.js.download"></script> 
+
+<script src="js/logout.js"></script>
+     <script>  
+         $(document).ready(function () {  			                    
+var tok = localStorage.getItem('token');
+alert(tok)
+			/// dashboard creation
+			     $.ajax({
+        type: 'get',
+        url: 'http://localhost:3100/users/this',
+        beforeSend: function(xhr) {
+          if (tok) {
+            xhr.setRequestHeader('Authorization', 'Bearer ' + tok);
+          }
+        },
+        success: function(data) {
+           $('#stage').append('<p> Name: ' + data.Fname  + '</p>' + "<p>Lname : " + data.Lname + "<p/>");                                      
+        },
+        error: function() {
+          alert("Sorry, you are not logged in.");
+        }
+      });
+	  
+	  // for logging out   
+    $("#logout").click(function(){
+			   	$.ajax({
+        type: 'post',
+        url: 'http://localhost:3100/users/logout',
+        beforeSend: function(xhr) {
+          if (tok) {
+            xhr.setRequestHeader('Authorization', 'Bearer ' + tok);
+          }
+        },
+       /*  success: function(responsedata, textStatus, errorThrown) { */
+          success: function(data) {
+          console.log("test");
+		     location.href="login.html";
+                                     
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          alert("Sorry, you are not logged in.");
+          console.log(errorThrown)
+        }
+      });
+			   });                                            
+	       });  
+		</script>  
+</head>  
+<body>  
+
+	
+	<div id="stage">dd</div>
+	<button id="logout" type ="submit">LOGOUT</button>
+	
+</body>  
+</html> 
+
+
+
+
