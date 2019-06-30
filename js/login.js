@@ -19,15 +19,15 @@ $(document).ready(function () {
                 var token=""
                 token=res.token;
                 localStorage.setItem('token', token);
-                if(token!=""){
+                if(token!=null){
                     alert(token);
                     var usertype=res.userType;
                     console.log(usertype)
                     if(usertype=="Admin"){
-                        location.href="logout.html";
+                        location.href="register.html";
                     }
                     else if(usertype=="User"){
-                        location.href="logout.html";
+                        location.href="userdashboard.html";
                     }
                 }
                else{               
