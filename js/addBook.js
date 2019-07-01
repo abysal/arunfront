@@ -18,7 +18,8 @@ $(document).ready(function(){
         success:function(data){
           imageFile=data;
   
-          $('#img_display').html('<img src="http://localhost:3100/book/'+imageFile+'" class="img-thumbnail" alt="Sample image" height="300px" width="300px">');
+          alert("Image upload successfull");
+          $('#img_display').html('<img src="http://localhost:3100/books/'+imageFile+'" class="img-thumbnail" alt="Sample image" height="300px" width="300px">');
   
         },
         error:function(){
@@ -34,14 +35,14 @@ $(document).ready(function(){
           var Booktype=$("#Booktype").val();
           var Bookauthor=$("#Bookauthor").val();  
           var Bookprice=$("#Bookprice").val();  
-          var restImageName=imageFile;
+          var bookImageName=imageFile;
    
           var data={
             Bookname:Bookname,
             Booktype:Booktype, 
             Bookauthor:Bookauthor,
             Bookprice:Bookprice,
-            Book:restImageName   
+            BookImageName: bookImageName   
           };
   
           console.log(data);
@@ -52,10 +53,9 @@ $(document).ready(function(){
               type:"POST",
               url:"http://localhost:3100/books/addbook",
               data:data,
-                           success:function(responseData,textStatus,jqXHR){
+                   success:function(responseData,textStatus,jqXHR){
                    console.log(responseData);
                    alert(responseData.message);
-                   window.location.reload();
                },
                error:function(jqXHR,textStatus,errorThrown){
                    console.log(errorThrown)

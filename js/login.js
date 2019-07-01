@@ -24,7 +24,7 @@ $(document).ready(function () {
                     var usertype=res.userType;
                     console.log(usertype)
                     if(usertype=="Admin"){
-                        location.href="register.html";
+                        location.href="admindashboard.html";
                     }
                     else if(usertype=="User"){
                         location.href="userdashboard.html";
