@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title> User signup </title>
+  
+  
+  <link rel='stylesheet' href='https://rawgit.com/hankchizljaw/boilerform/master/dist/css/boilerform.min.css?v=1.1.2'>
+<!-- <link rel='stylesheet' href='https://6a5c9ef246e340389a503943fbb780a5.production.codepen.plumbing/boilerform-examples-shared.css'> -->
+
+      <link rel="stylesheet" href="css/register.css">
+
+  
+</head>
+
+<body>
+
+  <!-- The boilerform namespace -->
+
+  <form method="post" enctype="multipart/form-data">
+    <div id="img_display"></div>
+    <div class="form-group">
+        <label for="newPic">Book Picture</label>
+        <input type="file" name="files" id="newPic" class="form-control" />
+    </div>
+</form>
+<form class="boilerform"  method="post">
+    <h1 class="o-heading">Signup</h1>
+    <div class="c-signup">
+            <div class="c-signup__field c-signup__field--fill" style="display: none;">
+                    <label for="id" class="floatLabel">ID</label>
+                    <input type="text" name="id" id="ID_book"  readonly/>
+                </div> 
+                
+                <!-- <p><label for="id" class="floatLabel">ID</label>
+            <input id="ID_user" type="text"></p> -->
+        <div class="c-signup__field">
+            <label for="Bookname" class="c-label">Book name</label>
+            <input type="text" name="Bookname" id="Bookname" class="c-input-field" />
+        </div>
+        <div class="c-signup__field">
+            <label for="Booktype" class="c-label">Book name</label>
+            <input type="text" name="Booktype" id="Booktype" class="c-input-field" />
+        </div>
+        <div class="c-signup__field c-signup__field--fill">
+            <label for="Bookauthor" class="c-label">Book Author</label>
+            <input type="text" name="Bookauthor" id="Bookauthor" class="c-input-field" />
+        </div>
+        <div class="c-signup__field c-signup__field--fill">
+            <label for="Bookprice" class="c-label">Book Price</label>
+            <input type="text" name="Bookprice" id="Bookprice" class="c-input-field" />
+        </div>
+        
+       
+       
+       
+     
+        <div class="c-signup__button">
+            <button class="c-button" type="submit" value=" update book" id="update">Update</button>
+        </div>
+    </div>
+</form>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
+<script  src="js/showupdatebook.js"></script>
+</body>
+
+</html>

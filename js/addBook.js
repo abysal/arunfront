@@ -35,14 +35,14 @@ $(document).ready(function(){
           var Booktype=$("#Booktype").val();
           var Bookauthor=$("#Bookauthor").val();  
           var Bookprice=$("#Bookprice").val();  
-          var bookImageName=imageFile;
+          var BookImageName=imageFile;
    
           var data={
             Bookname:Bookname,
             Booktype:Booktype, 
             Bookauthor:Bookauthor,
             Bookprice:Bookprice,
-            BookImageName: bookImageName   
+            BookImageName: BookImageName   
           };
   
           console.log(data);

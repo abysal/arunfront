@@ -4,7 +4,7 @@ $(document).ready(function () {
 
   //show book
 $.ajax({
-    type: 'get',
+    type: 'GET',
     url: 'http://localhost:3100/books/showbook',
     beforeSend: function(xhr) {
       if (tok) {
@@ -17,8 +17,8 @@ $.ajax({
                   // alert(data[index].image_file);
                   $("#book_details").append("<tbody><tr style'text-align:center'><td>" + data[index].Bookname+ "</td><td>" + data[index].Booktype +
                    "</td><td>" + data[index].Bookauthor + 
-                   "</td><td>" + data[index].Bookprice + 
-                   "</td>"+"<td><img src='http://localhost:3100/book/"+data[index].BookImageName+"'  height='150' width='150' class='img-fluid' alt='Responsive image'</td>"+
+                   "</td><td>" + data[index].Bookprice + "</td>" +
+                   "<td><img src='http://localhost:3100/books/"+data[index].BookImageName+"'  height='150' width='150' class='img-fluid' alt='Responsive image'</td>"+
                    "<td><a href='updatebook.html?id="
                    +data[index]._id+"' class='btn btn-primary btn-sm'>Edit</a>"+
           
