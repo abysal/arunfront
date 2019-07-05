@@ -27,7 +27,7 @@ $(document).ready(function () {
                         location.href="admindashboard.html";
                     }
                     else if(usertype=="User"){
-                        location.href="userdashboard.html";
+                        location.href="bookshown.html";
                     }
                 }
                else{               
