@@ -18,9 +18,9 @@ $.ajax({
                   $("#book_details").append("<tbody><tr style'text-align:center'><td>" + data[index].Username+ "</td><td>" + data[index].Age +
                    "</td><td>" + data[index].Email + 
                    "</td><td>" + data[index].Address + "</td>" +
-                   "<td><img src='http://localhost:3100/books/"+data[index].ProfilePic+"'  height='150' width='150' class='img-fluid' alt='Responsive image'</td>"+
-                   "<td><a href='updateuser.html?id="
-                   +data[index]._id+"' class='btn btn-primary btn-sm'>Edit</a>"+
+                   "<td><img src='http://localhost:3100/"+data[index].ProfilePic+"'  height='150' width='150' class='img-fluid' alt='Responsive image'</td>"+
+                  //  "<td><a href='updateuser.html?id="
+                  //  +data[index]._id+"' class='btn btn-primary btn-sm'></a>"+
           
                    " <button  class='btn btn-danger btn-sm clickme'  book_id='"+data[index]._id+"'>Delete</button></td></tr></tbody>");
                    
@@ -34,7 +34,7 @@ $.ajax({
   });
 
   //delete book
-  $("#User_details").on('click','.clickme',function(){
+  $("#book_details").on('click','.clickme',function(){
     id=$(this).attr('book_id');
     // alert(id);
     // alert(id);
