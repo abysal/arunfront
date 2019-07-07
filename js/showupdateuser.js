@@ -28,6 +28,8 @@ $(document).ready(function () {
           $('#Address').val(data.Address);
           $('#Age').val(data.Age);
           $('#ProfilePic').val(data.ProfilePic);
+          $('#ProfilePic').attr('src',"http://localhost:3100/"+data.ProfilePic);
+          
           id = data._id;
           console.log(id);
           console.log(data.Fname);
