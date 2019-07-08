@@ -1,9 +1,9 @@
 
-<!doctype html> 
+<!Doctype html> 
 <html class="no-js" lang="">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-    <title>Contact us</title>
+    <title>Books</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -13,82 +13,25 @@
  
 
     <header>
-      <script>
-        $(document).ready(function () {
-          var tok = localStorage.getItem('token');
-          alert(tok)
-          let userid = ''
-      
-          $.ajax({
-          url: 'http://localhost:3100/buys/bookstatus',
-          type: 'get',
-          beforeSend: function (xhr) {
-            if (tok) {
-            xhr.setRequestHeader('Authorization', 'Bearer ' + tok);
-            }
-          },
-      
-          success: function (res, textStatus, xhr) {
-            $.each(res.orders, function (index) {
-            $('#booktable').append(
-            
-
-             '<tr><th scope ="row">' +  res.orders[index].uid.Username + '</th>' + 
-      '<td class="w-25">'+ "<img src='http://localhost:3100/books/" + res.orders[index].bid.BookImageName + "' class='img-fluid img-thumbnail'></td><td>" +
-                res.orders[index].bid.Bookname + "</td><td>" +
-				  res.orders[index].status + "</td><td>"+
-                   "<Button class='delete btn-dark' del_id='"+res.orders[index]._id+"'>Cancel</Button></th><th>"
-            );
-          });
-            
-          
-            $('#booktable').on('click','.delete',function(){
-                id=$(this).attr('del_id');
-                $.ajax({
-                  url:'http://localhost:3100/buys/bookstatusdelete/'+id,
-                  type:'delete',
-                  success:function(res){
-                    alert('Venue Booking Canceled Successfully');
-                      if(res.message=="success"){
-                        location.href="book.html"
-                      }
-          },
-          error: function (xhr, textStatus, errorThrown) {
-            console.log('Error in Operation');
-          }
-          
-        });
-          });
-          }
-          })
-        });
-      
-          
-        </script>
+     
       
       <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand text-white" href="index.html">Book </a>
+        <a class="navbar-brand text-white" href="book.html">Unity Book </a>
       
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Dashboard</a>
-                </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="booking">Booking</a>
-            </li>
+            
+           
             <li class="nav-item">
-              <a class="nav-link" href="venuebooked.html">Venues booked</a>
+              <a class="nav-link" href="bookbooked.html">Book booked</a>
             </li>
               <li class="nav-item">
-                  <a class="nav-link" href="profile.html">Profile</a>
+                  <a class="nav-link" href="updateuser.html">Update Profile</a>
                 </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact</a>
-                </li>
+              
           </ul>
         </div>
         <button type="button" class="btn btn-info" id="logout">Logout</button>
@@ -120,6 +63,9 @@
               </table>   
               </div>
             </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
+            <script src="js/bookbooked.js"></script>
+            <script src="js/logout.js"></script>
 </body>
 
 </html>

@@ -2,6 +2,7 @@
 <html lang="en" >
 
 <head>
+   
   <meta charset="UTF-8">
   <title>Login Form</title>
   
@@ -9,24 +10,31 @@
 
   
       <link rel="stylesheet" href="css/login.css">
-
+      <link rel="stylesheet" href="css/index.css">
+      
   
 </head>
 
 <body>
+    <ul>
+        <li><a class="active" href="book.html">Home</a></li>
+     <li><a href="login.html">Login</a></li>
+     <li><a href="register.html">Register</a></li>
+   </ul>
 
   <div class="login">
   <h1>Login to Web App</h1>
   <form method="post" action="submit">
     <p>
       <input type="text" name="Username" id="Username" value="" placeholder="Username" /></p>
-    <p><input type="text" name="Password" id="Password" value="" placeholder="Password"/></p>
+    <p><input type="password" name="Password" id="Password" value="" placeholder="Password"/></p>
     
       
     </p>
     <div class="c-signup__button">
       <button class="c-button" type="submit" name="ss" id="submit">Login</button>
   </div>
+  
   </form>
 </div>
 

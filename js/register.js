@@ -46,9 +46,14 @@ $("#ProfilePic").on('change', function () {
     "Usertype":Usertype,
     "Age":Age
     }
-    console.log(data);
+    console.log(data)
+    if(Fname == "" || Lname =="" || Email =="" || Username == ""|| Password == ""||
+     Address == "" || Age == "")
+{
+    alert("Please fill out all field");
+}
 
-                    
+                    else{
              $.ajax({  
                  url: 'http://localhost:3100/users/registeruser',
                  type: 'post',  
@@ -61,6 +66,8 @@ $("#ProfilePic").on('change', function () {
                  error: function (xhr, textStatus, errorThrown) {  
                      console.log('Error in Operation');  
                  }  
-             });  
+             });
+            }  
          });
-         }); 
+         });
+    

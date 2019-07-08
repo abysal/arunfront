@@ -45,10 +45,14 @@ $(document).ready(function(){
           BookImageName: BookImageName   
         };
 
-        console.log(data);
+        console.log(data)
+        if(Bookname == "" || Booktype =="" || Bookauthor =="" || Bookprice == "")
+    {
+        alert("Please fill out all field");
+    }
  
     
-
+    else{   
         $.ajax({
             type:"POST",
             url:"http://localhost:3100/books/addbook",
@@ -63,6 +67,8 @@ $(document).ready(function(){
              }
         })
         return false;
-    })
+    }
+  })
+    
  
  })

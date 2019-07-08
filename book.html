@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Home</title>
+  <link rel= "stylesheet" href="css/bootstrap.css">
   <style>
     </style>
     
@@ -11,85 +12,32 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <!-- navv -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand text-white" href="book.html">Unity Books </a>
+    
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            
+          
+          <li class="nav-item">
+            <a class="nav-link" href="bookbooked.html">Book Bought</a>
+          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="updateuser.html">Update Profile</a>
+              </li>
+            
+        </ul>
+      </div>
+      <button type="submit" class="btn btn-info" id="logout">Logout</button>
+  
+    </nav>
   
       
-      <script>
-        $(document).ready(function () {  
-            
-            var tok = localStorage.getItem('token');
-alert(tok)
-       var id;
-   					$.ajax({
-					type:'get',
-					url:'http://localhost:3100/books/showbook',
-					beforeSend: function(xhr) {
-                   if (tok) {
-                     xhr.setRequestHeader('Authorization', 'Bearer ' + tok);
-                   }
-                 },
-                 success: function(res) {
-					$.each(res, function (index) {
-                    console.log(res[index]);
-                 $('#bookbook').append(
-                   '<br>'+
-                   
-                   '<div class ="card">'
-                   +
-                   '<div class="card-body">'+
-                  '<stong></strong>'
-                 +'<div class="col">'+
-                    '<img class="card-img-top" src="http://localhost:3100/books/'+res[index].BookImageName+'">' + '<br/>' +
-                    
-                 '<strong>Venue Name</strong>'+':'
-                 + res[index].Bookname+'</div>' +
-                 '<div class ="col">' + 
-                 '<strong>City</strong>'+':'
-                 + res[index].Booktype+'</div>' +'<div class ="col">' + 
-                 '<strong>Location</strong>'+':'
-                 + res[index].Bookauthor+'</div>' +
-                 '<div class ="col">' + 
-                 '<strong>Email</strong>'+ ':'
-                 +res[index].Bookprice+'</div>' +
-                '<div class ="col">' + 
-                 "<button class='btn btn-success clickme'  bb_id='" + res[index]._id+"'>BOOK</button>"
-              +'</div>' +'</div>' 
-                
-                );
-                 });
-			},
-                 error: function() {
-                   alert("Sorry, you are not logged in");
-                 }					
-					    });
-
-
-
-               $("#bookbook").on('click','.clickme',function(){
-                 alert($(this).attr('bb_id'))
-
-        $.ajax({
-     type: 'post',
-     url: 'http://localhost:3100/buys/bookbook/'+$(this).attr('bb_id'),
-     beforeSend: function(xhr) {
-       if (tok) {
-         xhr.setRequestHeader('Authorization', 'Bearer ' + tok);
-       }
-     },
-     success: function(res) {
-       console.log(res);
-                                     
-        },
-    
-     error: function() {
-       alert("Sorry, you are not logged in.");
-     }
-   });
-      });  
-
-    });
-
-      
-      </script>
+     
      
       </head>
      
@@ -111,8 +59,9 @@ alert(tok)
                       </div>
         <br>
                       
-     
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
+        <script src="js/book.js"></script>
+        <script src="js/logout.js"></script>
       
       </body>
    

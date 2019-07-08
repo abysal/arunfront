@@ -92,8 +92,13 @@ var imageFile = '';
           
    
   }
-      console.log(data1);
-
+  console.log(data1)
+    if(Fname == "" || Lname =="" || Email =="" || Username == ""|| Password == ""||
+     Address == "" || Age == "")
+{
+    alert("Please fill out all field");
+}
+else{   
       $.ajax({
           type: "PUT",
           url: "http://localhost:3100/users/updateuser/",
@@ -101,7 +106,7 @@ var imageFile = '';
           success: function (result) {
               alert(result);
               alert("User Updated Successfully"); 
-               location.href="userdashboard.html"; 
+               location.href="book.html"; 
           },
           beforeSend: function (xhr) {
               if (tok) {
@@ -109,6 +114,6 @@ var imageFile = '';
               }
           },
       });
-
+    }
   });
 });

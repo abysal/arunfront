@@ -1,21 +1,97 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
-<script src="./dashboard_files/jquery.min.js.download"></script> 
+<!DOCTYPE html></head>
+<html lang="en" >
 
-<script src="js/logout.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+	<link rel= "stylesheet" href="css/bootstrap.css">
+	<link rel= "stylesheet" href="css/register.css">
+    <style>
+      </style>
+      
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+       <script src="./dashboard_files/jquery.min.js.download"></script>
+       <!-- navv -->
+       <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand text-white" href="admindashboard.html">Unity Books </a>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              
+            
+            <li class="nav-item">
+              <a class="nav-link" href="showbook.html">Show Books</a>
+            </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="showuser.html">Show Users</a>
+                </li>
+                <!-- <li class="nav-item">
+                        <a class="nav-link" href="bookadd.html">Add Book</a>
+                      </li> -->
+              
+          </ul>
+        </div>
+        <button type="submit" class="btn btn-info" id="logout">Logout</button>
     
- 
-<body>  
-    <div id="stage"></div>
-    <a href="showbook.html">Showbooks</a>
-    <a href="showuser.html">Showusers</a>
-    <a href="bookadd.html">AddBook</a>
-	
-	<div id="stage">dd</div>
-	<button id="logout" type ="submit">LOGOUT</button>
-	
-</body>  
-</html> 
+      </nav>
+    
+        
+       
+       
+        </head>
+	  
+	  <body>
+	  
+		<!-- The boilerform namespace -->
+	  <form  method="post" class="form addBookForm">
+		  <h1 class="o-heading">Upload Book</h1>
+		  
+		  <div class="c-signup">
+				<div  class="c-signup__field" id="img_display"></div>
+				
+			  <div class="c-signup__field">
+					<label for="Book" class="c-label">Book</label> 
+					<input id="Book" type="file" name="files" class="c-input-field" enctype="multipart/formdata" accept="./images">
+				 
+			  </div>
+			  <div class="c-signup__field">
+					<label for="Bookname" class="c-label">Book Name</label>
+					<input id="Bookname" name="Bookname" type="text" class="c-input-field"/>
+				 
+			  </div>
+			  <div class="c-signup__field">
+					<label for="Booktype" class="c-label">Book Type</label>
+					<input id="Booktype" name="Booktype" type="text" class="c-input-field"/>
+				 
+			  </div>
+			  <div class="c-signup__field c-signup__field--fill">
+					<label for="Bookauthor" class="c-label">Book Author</label>
+					<input id="Bookauthor" name="Bookauthor" type="text" class="c-input-field"/>
+				  
+			  </div>
+			  <div class="c-signup__field c-signup__field--fill">
+					<label for="Bookprice" class="c-label">Book Price</label>
+					<input id="Bookprice" name="Bookprice" type="number" class="c-input-field">
+				  
+			  </div>
+			
+			  <div class="c-signup__button">
+				  <button class="c-button" type="submit" name="ss" id="submit">Add Book</button>
+			  </div>
+		  </div>
+	  </form>
+		
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
+	  <script src="js/addbook.js"></script>
+	  
+	  <script src="js/logout.js"></script>
 
-
-
-
+  </body>  
+  </html>
+	  

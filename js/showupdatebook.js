@@ -80,8 +80,13 @@ $(document).ready(function () {
             
      
     }
-        console.log(data1);
+    console.log(data1)
+    if(Bookname == "" || Booktype =="" || Bookauthor =="" || Bookprice == "")
+{
+    alert("Please fill out all field");
+}
 
+    else{   
         $.ajax({
             type: "PUT",
             url: "http://localhost:3100/books/updatebook/"+id,
@@ -97,6 +102,6 @@ $(document).ready(function () {
                 }
             },
         });
-
+    }
     });
 });

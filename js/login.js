@@ -10,6 +10,8 @@ $(document).ready(function () {
        "Username" : username,
        "Password" : password
        }
+
+       
       $.ajax({  
             url: 'http://localhost:3100/users/Login/',
             type: 'post',  
@@ -27,7 +29,7 @@ $(document).ready(function () {
                         location.href="admindashboard.html";
                     }
                     else if(usertype=="User"){
-                        location.href="userdashboard.html";
+                        location.href="book.html";
                     }
                 }
                else{               
@@ -41,4 +43,5 @@ $(document).ready(function () {
         });  
     }); 
     
-});  
+}); 
+ 
